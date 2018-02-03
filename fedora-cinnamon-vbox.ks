@@ -9,7 +9,7 @@ install
 text
 # Use network installation
 url --mirrorlist="http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch"
-repo --name=fedora-updates --mirrorlist="https://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-$releasever&arch=$basearch"
+repo --name=fedora-updates --mirrorlist="http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch"
 # Firewall configuration
 firewall --enabled --service=ssh
 # Run the Setup Agent on first boot
