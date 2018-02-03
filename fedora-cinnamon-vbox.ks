@@ -48,4 +48,7 @@ logvol swap  --fstype="swap" --size=4096 --name=swap --vgname=fedora
 @fonts
 @standard
 ansible
+dkms
+kernel-devel
+kernel-headers
 %end
