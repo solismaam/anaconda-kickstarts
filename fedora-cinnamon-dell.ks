@@ -13,6 +13,10 @@ ignoredisk --only-use=sda
 keyboard --vckeymap=fi --xlayouts='fi'
 # System language
 lang en_US.UTF-8
+# Network information
+network --bootproto=dhcp --device=eno1 --ipv6=auto --activate
+network --bootproto=dhcp --device=wlp3s0 --ipv6=auto --activate
+network  --bootproto=dhcp --hostname=dell
 # Root password
 rootpw --lock
 # System services
