@@ -14,9 +14,7 @@ keyboard --vckeymap=fi --xlayouts='fi'
 # System language
 lang en_US.UTF-8
 # Network information
-network --bootproto=dhcp --device=eno1 --ipv6=auto --activate
-network --bootproto=dhcp --device=wlp3s0 --ipv6=auto --activate
-network  --bootproto=dhcp --hostname=dell
+network --bootproto=dhcp --device=eno1 --ipv6=auto --activate --hostname=dell
 # Root password
 rootpw --lock
 # System services
@@ -39,7 +37,7 @@ logvol /     --fstype="ext4" --size=25600 --name=root --vgname=fedora
 logvol /home --fstype="ext4" --size=25600 --name=home --vgname=fedora
 logvol /var  --fstype="ext4" --size=1024  --name=var  --vgname=fedora --grow
 logvol swap  --fstype="swap" --size=8196  --name=swap --vgname=fedora
-
+# Package Selection
 %packages
 @^cinnamon-desktop-environment
 @ansible-node
@@ -47,3 +45,9 @@ ansible
 git
 vim
 %end
+# Post-installation Script
+%post
+depmod -a
+%end
+# Reboot After Installation
+reboot --eject
